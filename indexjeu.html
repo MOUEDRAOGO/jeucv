@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 16</title>
+    <link rel="stylesheet" href="CSS/cssjeu.css" />
+    <script src="JS/ConstructeurShark.js"></script>
+    <script src="JS/Constructeurenemies.js"></script>
+    <script src="JS/mainJeu.js"></script>
+    <audio controls autoplay loop>
+        <source src="Assets/musique/sonBulles.mp3" type="audio/mpeg"> Your browser does not support the audio tag.
+    </audio>
+</head>
+<body id="body">
+    <div id="background">
+        <div id="score">0</div>
+        <div id="sharkContainer">
+            <img id="sharkContenu" src="Assets/Images/Shark/Animations/attack/spriteShark.png" />
+        </div>
+        <div id="gameover">
+            <h1>Perdu !</h1>
+        </div>
+        <div id="win">
+            <h1>Bravo !
+                <br/>Vous avez gagné !
+                <br>
+                <br> Cliquez sur le coffre pour visualiser mon CV</h1>
+            <div id="CV">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="treisureContainer">
+        <a href="Assets/CV/Marc OUEDRAOGO Profil professionnel Developpeur Integrateur Web Javascript.pdf" target="_blank">
+            <img id="treisureContenu" class="treisureContenu" src="Assets/Images/Tresor/spritesheetTreisureChest.png" />
+        </a>
+    </div>
+    <noscript>
+        <p>Veuillez activer JavaScript</p>
+    </noscript>
+</body>
+</html>

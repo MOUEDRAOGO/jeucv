@@ -1,0 +1,86 @@
+
+
+/************* GESTES TREISURE */
+
+var gestesDuTreisure = { 
+    TreisureOpen: [{     
+        largeurMasque: '1058px', 
+        hauteurMasque: '465px', 
+        topDeImage: '-1px',    
+        leftDeImage: '-1px', 
+
+    }, {
+        largeurMasque: 'px',
+        hauteurMasque: 'px',
+        topDeImage: 'px',
+        leftDeImage: 'px',
+    }],
+
+
+
+}; // fin du gestesDuTreisure
+console.log('gestesDuTreisure ok')
+
+window.addEventListener('DOMContentLoaded', function () {
+    console.log('DOMContentLoaded');
+
+    //met le compteur et le nombre de pixel a 0
+    var decalageLeft = -5;
+    console.log('decalageLeft -5 ok')
+    
+
+    //recupere le masque treisureContainer et le sprite treisureContenu
+    var treisureContainerADeplacer = document.getElementById('treisureContainer');
+    console.log('var treisureContainerADeplacer ok');
+    var treisureContenuAInserer = document.getElementById('treisureContenu');
+    console.log('var treisureContenuAInserer ok');
+
+    // definit la vitesse de deplacement
+    var vitesseOuverturetreisure = 10;
+    console.log('vitesseOuverturetreisure ok')
+
+    // definit la continuité du geste selectionné
+    var continuerTreisureOpen = true;
+    console.log(' var continuerTreisureOpen ok')
+
+    // cree une fonction de l'animation du geste selectionné afin de pouvoir la manipuler
+    var animationTreisureOpen = function (i) {
+
+        console.log('var animationTreisureOpen ok');
+
+        treisureContainerADeplacer.style.width = gestesDuTreisure.TreisureOpen
+[i].largeurMasque;
+        console.log('gestesDuTreisure.TreisureOpen
+[i].largeurMasque ok')
+
+        treisureContainerADeplacer.style.height = gestesDuTreisure.TreisureOpen
+[i].hauteurMasque;
+        console.log('gestesDuTreisure.TreisureOpen
+[i].hauteurMasque ok')
+
+        treisureContenuAInserer.style.top = gestesDuTreisure.TreisureOpen
+[i].topDeImage;
+        console.log('gestesDuTreisure.TreisureOpen
+[i].topDeImage ok')
+
+        treisureContenuAInserer.style.left = gestesDuTreisure.TreisureOpen
+[i].leftDeImage;
+        console.log('gestesDuTreisure.TreisureOpen
+[i].leftDeImage ok')
+
+
+        if (i + 1 >= gestesDuTreisure.TreisureOpen
+.length) {
+
+            // Si le i est supérieur au nombre de décomposition pour l'animation,
+            // on réinitialise le compteur globalement.
+            compteurPourAnimationRequin = 0;
+        }
+
+    };
+
+    // Ce compteur est initialisé à 0 à l'extérieur de la fonction animationTreisureOpen un seule fois au chargement du document.
+    var compteurPourAnimationRequin = 0;
+
+
+    /************* FIN GESTES TREISURE */
