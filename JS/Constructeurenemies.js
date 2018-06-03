@@ -108,7 +108,7 @@ var Constructeurenemies = function(shark, offset) {
 
     this.fish1ReverseContenuADeplacer = window.document.createElement('img');
     this.fish1ReverseContenuADeplacer.id = 'fish1ReverseContenu';
-    this.fish1ReverseContenuADeplacer.src = 'Assets/Images/Fish/Fish_1/Animations/Fish1reverse/spriteFish1reverse.png';
+    this.fish1ReverseContenuADeplacer.src = './Assets/Images/Fish/Fish_1/Animations/Fish1reverse/spriteFish1reverse.png';
     //console.log('var fish1ReverseContenuADeplacer ok ')
 
     this.fish1ReverseContainerADeplacer.appendChild(this.fish1ReverseContenuADeplacer); // j insere le contenu recupere ds le container
@@ -160,20 +160,13 @@ var Constructeurenemies = function(shark, offset) {
                 i++;
                 // console.log('nageFish1Reverse i++ OK')
 
-                /********ESSAIS COLLISIONS */
+                /********COLLISIONS */
 
-                // if (sharkContainer.offsetTop + parseFloat(sharkContainer.style.height) > this.fish1ReverseContainerADeplacer.offsetTop && sharkContainer.offsetTop - parseFloat(fish1ReverseContainer.style.height) < this.fish1ReverseContainerADeplacer.offsetTop && sharkContainer.offsetLeft + 190 > this.fish1ReverseContainerADeplacer.offsetLeft && sharkContainer.offsetLeft - 340 < this.fish1ReverseContainerADeplacer.offsetLeft) {
 
                 var fish = that.fish1ReverseContainerADeplacer;
                 var sharko = shark.sharkContainerADeplacer;
 
                 if (
-                    //    sharkContainer.offsetTop + parsFloat(sharkContainer.style.height) > this.fish1ReverseContainerADeplacer.offsetTop 
-                    //  && sharkContainer.offsetTop - parseFloat(fish1ReverseContainer.style.height) < this.fish1ReverseContainerADeplacer.offsetTop 
-                    //&&
-                    // sharkContainer.offsetLeft + 190 > this.fish1ReverseContainerADeplacer.offsetLeft &&
-                    // sharkContainer.offsetLeft - 340 < this.fish1ReverseContainerADeplacer.offsetLeft
-
                     fish.offsetLeft < sharko.offsetLeft + sharko.offsetWidth &&
                     fish.offsetLeft > sharko.offsetLeft + sharko.offsetWidth - 50 &&
                     fish.offsetTop + fish.offsetHeight > sharko.offsetTop &&
@@ -181,7 +174,7 @@ var Constructeurenemies = function(shark, offset) {
                 ) {
                     var divScore = window.document.getElementById('score');
                     var scoreValue = divScore.innerHTML; // je recupere la valeur du score
-                    console.log(scoreValue);
+                    //console.log(scoreValue);
 
                     if (scoreValue < 10 && window.document.getElementById('gameover').style.display === "") {
                         try {
@@ -189,8 +182,6 @@ var Constructeurenemies = function(shark, offset) {
                         } catch (err) {
                             that.fish1ReverseContainerADeplacer.parentNode.removeChild(that.fish1ReverseContainerADeplacer);
                         }
-                        // fish1ReverseContainer.style.display = "none";
-
                         // gestion du score
                         scoreValue++;
                         divScore.innerHTML = scoreValue; // je remets le nouveau score ds la div score
@@ -202,7 +193,7 @@ var Constructeurenemies = function(shark, offset) {
                         }
                     }
                 };
-                /******** fin ESSAIS COLLISIONS */
+                /******** fin COLLISIONS */
 
             }
             if (that.continuerNageFish1Reverse && that.removeFish == 0) {
@@ -211,7 +202,7 @@ var Constructeurenemies = function(shark, offset) {
                 // console.log('animation stop !!'); // si removeFish = 1, je stop l'animation nageFish1Reverse
             }
 
-            that.decalageLeftFish1Reverse -= that.vitesseFish1Reverse
+            that.decalageLeftFish1Reverse -= that.vitesseFish1Reverse // inversion du sens de deplacement
 
             that.fish1ReverseContainerADeplacer.style.left = that.decalageLeftFish1Reverse + 'px';
             // console.log('fish1ReverseContainerADeplacer.style.left ok')
@@ -219,8 +210,7 @@ var Constructeurenemies = function(shark, offset) {
             if (parseFloat(that.fish1ReverseContainerADeplacer.style.left) < -parseFloat(that.fish1ReverseContainerADeplacer.style.width) && (that.removeFish == 0)) { // suppression du fish1 qd tte la largeur du masque du fish1 a depassee la limite gauche de l ecran 
 
                 that.removeFish = 1; // si removeFish = 1, je stop l'animation 
-
-
+                
                 try {
                     that.fish1ReverseContainerADeplacer.remove();
                 } catch (err) {

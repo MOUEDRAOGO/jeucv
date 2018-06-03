@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8" />
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 16</title>
-    <link rel="stylesheet" href="CSS/cssjeu.css" />
-    <script src="JS/ConstructeurShark.js"></script>
-    <script src="JS/Constructeurenemies.js"></script>
-    <script src="JS/mainJeu.js"></script>
+    <link rel="stylesheet" href="./CSS/cssjeu.css" />
+    <script src="./JS/ConstructeurShark.js"></script>
+    <script src="./JS/Constructeurenemies.js"></script>
+    <script src="./JS/mainJeu.js"></script>
     <audio controls autoplay loop>
-        <source src="Assets/musique/sonBulles.mp3" type="audio/mpeg"> Your browser does not support the audio tag.
+        <source src="./Assets/musique/sonBulles.mp3" type="audio/mpeg"> Your browser does not support the audio tag.
     </audio>
 </head>
 <body id="body">
     <div id="background">
-        <div id="score">0</div>
-        <div id="sharkContainer">
-            <img id="sharkContenu" src="Assets/Images/Shark/Animations/attack/spriteShark.png" />
+        <div id="CV">
+            Mon CV : 
+            <a href="./Assets/CV/Marc OUEDRAOGO Profil professionnel Developpeur Integrateur Web Javascript.pdf" target="_blank"> CV </a>
         </div>
-        <div id="gameover">
-            <h1>Perdu !</h1>
+        <div id="score"> 0</div>
+        <div id="sharkContainer">
+            <img id="sharkContenu" src="./Assets/Images/Shark/Animations/attack/spriteShark.png" />
         </div>
         <div id="win">
-            <h1>Bravo !
-                <br/>Vous avez gagné !
+            <h1>GAGNE !
                 <br>
                 <br> Cliquez sur le coffre pour visualiser mon CV</h1>
-            <div id="CV">
-                <iframe src="" frameborder="0"></iframe>
-            </div>
         </div>
+        <div id="gameover">
+            <h1>Vous avez perdu !</h1>
+        </div>
+        
     </div>
     <div id="treisureContainer">
-        <a href="Assets/CV/Marc OUEDRAOGO Profil professionnel Developpeur Integrateur Web Javascript.pdf" target="_blank">
-            <img id="treisureContenu" class="treisureContenu" src="Assets/Images/Tresor/spritesheetTreisureChest.png" />
+        <a href="./Assets/CV/Marc OUEDRAOGO Profil professionnel Developpeur Integrateur Web Javascript.pdf" target="_blank">
+            <img id="treisureContenu" class="treisureContenu" src="./Assets/Images/Tresor/spritesheetTreisureChest.png" />
         </a>
     </div>
     <noscript>

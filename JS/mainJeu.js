@@ -19,19 +19,17 @@ window.requestAnimationFrame =
 window.addEventListener('DOMContentLoaded', function() {
     var shark = new ConstructeurShark(); // est execute une fois que le DOM est charge
     console.log(shark);
-    var largeurEcran = window.innerWidth;
-    var gameHeight = document.getElementById('background').offsetHeight;
-    var topBackground = document.getElementById('background').offsetTop;
+    var largeurEcran = window.innerWidth; //recupere automatiquement la valeur de chaque ecran
+    var gameHeight = document.getElementById('background').offsetHeight; //definit la hauteur d evolution du jeu
+    var topBackground = document.getElementById('background').offsetTop; // definit le top a partir duquel commence la hauteur d 'evolution du jeu
 
-    // createShark(largeurEcran);
-    //creation ennemies a la volee
+    //creation ennemies a la volee 
     var setIntervalEnemies = setInterval(function() {
-        var randomHeight = Math.random() * (gameHeight * 0.9 - topBackground) + topBackground; // 0.9 pour reduire la hauteur du ramdom afin que le poisson n apparaisse hors du cadre du jeu
+        var randomHeight = Math.random() * (gameHeight * 0.9 - topBackground) + topBackground; // 0.9 pour reduire la hauteur du ramdom afin que le poisson n apparaisse pas hors du cadre du jeu
         new Constructeurenemies(shark, randomHeight)
     }, 1000);
 
-    // timing du loose
-
+    // timing du gameover
     setTimeout(function() {
         //si au bout de 20s, valeur div score <10
         if (window.document.getElementById('score').innerHTML < 10) {
@@ -96,7 +94,4 @@ window.addEventListener('DOMContentLoaded', function() {
         shark.sharkContainerADeplacer.style.top = shark.decalageTop + 'px';
         //console.log('sharkContainerADeplacer.style.top ok')
     });
-
-
-
 }); // fin window.addEventListener
