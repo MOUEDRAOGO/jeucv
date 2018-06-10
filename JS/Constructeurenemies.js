@@ -119,7 +119,7 @@ var Constructeurenemies = function(shark, offset) {
     this.continuerNageFish1Reverse = true;
     // console.log('var continuerNageFish1Reverse OK')
 
-    this.decalageLeftFish1Reverse = 2000;
+    this.decalageLeftFish1Reverse = 2000; // definit la zone de depart/creation du fish1 (en dehors de l'ecran)
     // console.log('decalageLeftFish1Reverse -5 ok')
 
     // definit la vitesse de deplacement du fish
@@ -130,7 +130,7 @@ var Constructeurenemies = function(shark, offset) {
 
     this.removeFish = 0;
 
-    this.nageFish1Reverse = function(i) {
+    this.nageFish1Reverse = function(i) { // animation du fish1
         var that = this;
         window.requestAnimationFrame(function(timestampActuel) {
             if (that.timestampInitial === undefined) {
@@ -149,7 +149,7 @@ var Constructeurenemies = function(shark, offset) {
 
                 //console.log('nageFish1Reverse if OK')
 
-                that.fish1ReverseContainerADeplacer.style.width = that.gestesDuFish1Reverse.fish1ReverseRun[i].largeurMasque;
+                that.fish1ReverseContainerADeplacer.style.width = that.gestesDuFish1Reverse.fish1ReverseRun[i].largeurMasque; // recuperation des coordonnees
 
                 that.fish1ReverseContainerADeplacer.style.height = that.gestesDuFish1Reverse.fish1ReverseRun[i].hauteurMasque;
 
@@ -168,15 +168,16 @@ var Constructeurenemies = function(shark, offset) {
 
                 if (
                     fish.offsetLeft < sharko.offsetLeft + sharko.offsetWidth &&
-                    fish.offsetLeft > sharko.offsetLeft + sharko.offsetWidth - 50 &&
+                    fish.offsetLeft > sharko.offsetLeft + sharko.offsetWidth - 50 && // -50 pour que le poisson disparaisse au milieu de la gueule du requin
                     fish.offsetTop + fish.offsetHeight > sharko.offsetTop &&
                     fish.offsetTop < sharko.offsetTop + sharko.offsetHeight
                 ) {
                     var divScore = window.document.getElementById('score');
+                    var scoreWin = 10 // definition du score a realiser pour gagner
                     var scoreValue = divScore.innerHTML; // je recupere la valeur du score
                     //console.log(scoreValue);
 
-                    if (scoreValue < 10 && window.document.getElementById('gameover').style.display === "") {
+                    if (scoreValue < scoreWin && window.document.getElementById('gameover').style.display === "") { 
                         try {
                             that.fish1ReverseContainerADeplacer.remove();
                         } catch (err) {
@@ -187,7 +188,7 @@ var Constructeurenemies = function(shark, offset) {
                         divScore.innerHTML = scoreValue; // je remets le nouveau score ds la div score
 
                         // gestion win & loose
-                        if (scoreValue === 10) { // si score >10, je gagne dc j affiche la div win
+                        if (scoreValue === scoreWin) { // si score =10, je gagne dc j affiche la div win
                             window.document.getElementById('win').style.display = "block";
                             window.document.getElementById('treisureContainer').style.display = "block";
                         }
@@ -199,7 +200,7 @@ var Constructeurenemies = function(shark, offset) {
             if (that.continuerNageFish1Reverse && that.removeFish == 0) {
                 that.nageFish1Reverse(i);
             } else {
-                // console.log('animation stop !!'); // si removeFish = 1, je stop l'animation nageFish1Reverse
+                // console.log('animation stop !!'); 
             }
 
             that.decalageLeftFish1Reverse -= that.vitesseFish1Reverse // inversion du sens de deplacement

@@ -98,9 +98,9 @@ var ConstructeurShark = function() {
         }],
     }; // fin du gestesDuSharkAttack 
 
-    this.decalageLeftShark = -5;
-    this.decalageTop = 200;
-    this.vitesseShark = 10;
+    this.decalageLeftShark = -5; // largeur de depart
+    this.decalageTop = 200; // hauteur de depart
+    this.vitesseShark = 10; // vitesse deplacement shark
     this.continuerSharkRun = true;
     this.compteurPourAnimationRequin = 0;
 
@@ -123,7 +123,7 @@ var ConstructeurShark = function() {
 
         if (i + 1 >= this.gestesDuShark.sharkAttack.length) {
             // Si le i est supérieur au nombre de décomposition pour l'animation,
-            // on réinitialise le compteur globalement.
+            // on réinitialise le compteur
             this.compteurPourAnimationRequin = 0;
         }
     };

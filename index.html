@@ -2,32 +2,46 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 16</title>
+    <title>SHARKOO - Marc OUEDRAOGO - jeu CV - developpeur Integrateur Web Javascript</title>
     <link rel="stylesheet" href="./CSS/cssjeu.css" />
     <script src="./JS/ConstructeurShark.js"></script>
     <script src="./JS/Constructeurenemies.js"></script>
+    <!-- <script src="./JS/ConstructeurMines.js"></script> -->
     <script src="./JS/mainJeu.js"></script>
-    <audio controls autoplay loop>
-        <source src="./Assets/musique/sonBulles.mp3" type="audio/mpeg"> Your browser does not support the audio tag.
+    <audio controls autoplay loop >
+        <source src="./Assets/musique/sonBulles.mp3" type="audio/mpeg"> Musique non supportée !
     </audio>
 </head>
 <body id="body">
     <div id="background">
-        <div id="CV">
-            Mon CV : 
-            <a href="./Assets/CV/Marc OUEDRAOGO Profil professionnel Developpeur Integrateur Web Javascript.pdf" target="_blank"> CV </a>
+
+        <div id="regleJeu">    <img src="../test04/Assets/UI/regleJeu.png" alt="regleJeu">   </div>
+
+        
+        <div id="menuJeu"> 
+
+            <div id="boutonInterrogation" >  <img src="../test04/Assets/UI/boutonInterrogation.png" alt="Règles du jeu"> </div>
+
+            <div id="boutonRejouer"> <img src="../test04/Assets/UI/boutonRejouer.png" alt="Rejouer"> </div>
+
+            <div id="tempsRestant" ></div>
+
+            <div id="CV">
+                <a href="./Assets/CV/Marc OUEDRAOGO Profil professionnel Developpeur Integrateur Web Javascript.pdf" target="_blank">CV</a>
+            </div>
+
+           
+            <div id="score">0</div>
+           
         </div>
-        <div id="score"> 0</div>
+        
         <div id="sharkContainer">
             <img id="sharkContenu" src="./Assets/Images/Shark/Animations/attack/spriteShark.png" />
         </div>
         <div id="win">
-            <h1>GAGNE !
-                <br>
-                <br> Cliquez sur le coffre pour visualiser mon CV</h1>
+           <img src="../test04/Assets/UI/Gagne.png" alt="">
         </div>
-        <div id="gameover">
-            <h1>Vous avez perdu !</h1>
+        <div id="gameover"> <img src="../test04/Assets/UI/Perdu.png" alt="">
         </div>
         
     </div>
