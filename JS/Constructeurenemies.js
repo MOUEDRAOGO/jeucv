@@ -123,7 +123,7 @@ var Constructeurenemies = function(shark, offset) {
     // console.log('decalageLeftFish1Reverse -5 ok')
 
     // definit la vitesse de deplacement du fish
-    this.vitesseFish1Reverse = 10;
+    this.vitesseFish1Reverse = 20;
     // console.log('vitesseFish1Reverse ok')
 
     this.timestampInitial = 0;

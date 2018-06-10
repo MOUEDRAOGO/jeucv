@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         /////// gestion du temps alloué a une partie de jeu   ///////
 
-        var tempsPartie = 20000; // definition en ms de la duree d 'une partie
+        var tempsPartie = 30000; // definition en ms de la duree d 'une partie
 
 
         /////// gestion de l affichage du temps de jeu restant  ///////
