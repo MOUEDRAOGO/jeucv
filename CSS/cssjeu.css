@@ -73,11 +73,11 @@ body {
     font-size: 1.2em;
     display: inline-block;
     position: absolute;
-    line-height:100px;
+    line-height:54px;
     margin: auto;
-    top: 50px;
+    top: 62px;
     left: 700px;
-    height: 100px;
+    height: 58px;
     width: 150px;
     background-color: gold;
     border-radius: 10px;
